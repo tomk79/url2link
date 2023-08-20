@@ -1,21 +1,21 @@
 # url2link
 
-ブラウザ上で動作し、ウェブページ上に書かれた URL をリンクに変換します。
+It works on browser and converts URLs written on web pages into links.
 
 
-## 更新履歴 - Change log
+## Change log
 
 ### @tomk79/url2link v0.1.0 (リリース日未定)
 
 - Initial Release
 
 
-## ライセンス - License
+## License
 
 MIT License https://opensource.org/licenses/mit-license.php
 
 
-## 作者 - Author
+## Author
 
 - Tomoya Koyanagi <tomk79@gmail.com>
 - website: <https://www.pxt.jp/>

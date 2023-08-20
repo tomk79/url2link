@@ -1,30 +1,35 @@
 /**
- * ドキュメント中のURLらしき文字列をリンクに変換する
+ * Convert URL-like strings in documents to links
  *
- * Elementオブジェクトを与える
+ * Give an Element object
  * ```js
  * url2link(document.getElementById('target-element-id'));
  * ```
  *
- * クエリ文字列を与える
+ * Give a query string
  * ```js
  * url2link('.target-element-query');
  * ```
  *
- * @param {Element|String} $targetElement Elementオブジェクト または クエリ文字列
- * @param {Object} options オプション
- * @returns void
+ * @param {Element|String} $targetElement Element object or Query string
+ * @param {Object} options Options
+ * @param {RegExp} options.pattern Regular expression pattern for detecting URLs
+ * @param {Function} options.onCreateLink Callback function called on link generation
+ * @returns void(0)
  */
 function url2link( $targetElement, options ){
+	options = options || {};
+
 	if( typeof($targetElement) == typeof('string') ){
 		var $targetContainer = document.querySelectorAll($targetElement);
 		$targetContainer.forEach(function($row, index){
 			url2link($row, options);
 		});
-		return;
+		return void(0);
 	}
 
-	var regExpPattern = /https?\:\/\/[a-zA-Z0-9\.\\-\_]+\/[a-zA-Z0-9\-\_\.\?\&\=\+\%\/\#]*/;
+	var regExpPattern = options.pattern || /https?\:\/\/[a-zA-Z0-9\.\\-\_]+\/[a-zA-Z0-9\-\_\.\?\&\=\+\%\/\#]*/;
+	var fncOnCreateLink = options.onCreateLink || function($a){return $a;};
 
 	for(var index = 0; $targetElement.childNodes.length > index; index ++){
 		var $node = $targetElement.childNodes[index];
@@ -46,7 +51,8 @@ function url2link( $targetElement, options ){
 				$a.href = extractedUrl;
 				$a.rel = `noopener noreferrer`;
 				$a.target = `_blank`;
-				$node.after($a);
+				var $finalA = fncOnCreateLink($a) || $a;
+				$node.after($finalA);
 			}
 			continue;
 
