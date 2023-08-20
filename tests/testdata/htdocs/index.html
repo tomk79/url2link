@@ -28,8 +28,8 @@
 			url2link(document.getElementById('test-target-1'));
 			url2link('.test-target-2');
 			url2link('.test-target-3', {
-				"pattern": /https?\:\/\/[a-zA-Z0-9\.\/]+/,
-				"onCreateLink": function($a){
+				pattern: /https?\:\/\/[a-zA-Z0-9\.\/]+/,
+				onCreateLink: function($a){
 					$a.target = '_self';
 					return $a;
 				},
