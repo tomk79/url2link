@@ -24,7 +24,7 @@ function url2link( $targetElement, options ){
 		return;
 	}
 
-	var regExpPattern = /h?ttps?\:\/\/[a-zA-Z0-9\.\\-\_]+\/[a-zA-Z0-9\-\_\.\?\&\=\+\%\/\#]*/;
+	var regExpPattern = /https?\:\/\/[a-zA-Z0-9\.\\-\_]+\/[a-zA-Z0-9\-\_\.\?\&\=\+\%\/\#]*/;
 
 	for(var index = 0; $targetElement.childNodes.length > index; index ++){
 		var $node = $targetElement.childNodes[index];
@@ -43,11 +43,7 @@ function url2link( $targetElement, options ){
 
 				var $a = document.createElement('a');
 				$a.innerText = extractedUrl;
-				var href = extractedUrl;
-				if( href.match(/^ttp/) ){
-					href = 'h'+href;
-				}
-				$a.href = href;
+				$a.href = extractedUrl;
 				$a.rel = `noopener noreferrer`;
 				$a.target = `_blank`;
 				$node.after($a);

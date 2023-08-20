@@ -1,5 +1,9 @@
 {
+    "name": "@tomk79/url2link",
+    "version": "0.1.0",
+    "description": "ブラウザ上で動作し、ウェブページ上に書かれた URL をリンクに変換します。",
     "private": false,
+    "main": "js/url2link.js",
     "scripts": {
         "dev": "npm run development",
         "development": "mix",
