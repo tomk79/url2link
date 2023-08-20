@@ -58,7 +58,7 @@ url2link('.target-elements', {
 
 ## Change log
 
-### @tomk79/url2link v0.1.0 (リリース日未定)
+### @tomk79/url2link v0.1.0 (2023-08-20)
 
 - Initial Release
 
