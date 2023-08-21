@@ -1,6 +1,6 @@
 {
     "name": "@tomk79/url2link",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "It works on browser and converts URLs written on web pages into links.",
     "private": false,
     "main": "js/url2link.js",
