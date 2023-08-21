@@ -43,7 +43,7 @@ to be like this:
 
 ```js
 url2link('.target-elements', {
-    pattern: /https?\:\/\/[a-zA-Z0-9\.\\-\_]+\/[a-zA-Z0-9\-\_\.\?\&\=\+\%\/\#]*/,
+    pattern: /https?\:\/\/(?:[a-zA-Z0-9\.\-\_\%]*(?:\:[a-zA-Z0-9\.\-\_\%]*)?\@)?[a-zA-Z0-9\.\-]+(?:\:[0-9]+)?(?:\/[a-zA-Z0-9\.\-\_\%\/\?\&\=\+\#]*)?/,
     onCreateLink: function($a){
         // The generated A element `$a` is passed.
         // Please process as necessary.
@@ -57,6 +57,10 @@ url2link('.target-elements', {
 
 
 ## Change log
+
+### @tomk79/url2link v0.1.1 (リリース日未定)
+
+- Fix: a flaw in URL pattern detection.
 
 ### @tomk79/url2link v0.1.0 (2023-08-20)
 

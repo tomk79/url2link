@@ -28,7 +28,7 @@ function url2link( $targetElement, options ){
 		return void(0);
 	}
 
-	var regExpPattern = options.pattern || /https?\:\/\/[a-zA-Z0-9\.\\-\_]+\/[a-zA-Z0-9\-\_\.\?\&\=\+\%\/\#]*/;
+	var regExpPattern = options.pattern || /https?\:\/\/(?:[a-zA-Z0-9\.\-\_\%]*(?:\:[a-zA-Z0-9\.\-\_\%]*)?\@)?[a-zA-Z0-9\.\-]+(?:\:[0-9]+)?(?:\/[a-zA-Z0-9\.\-\_\%\/\?\&\=\+\#]*)?/;
 	var fncOnCreateLink = options.onCreateLink || function($a){return $a;};
 
 	for(var index = 0; $targetElement.childNodes.length > index; index ++){

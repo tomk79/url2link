@@ -4,6 +4,20 @@
 		<meta charset="utf-8" />
 		<title>url2link test</title>
 		<script src="../../../dist/url2link.js"></script>
+		<style>
+			html, body {
+				color: #666;
+			}
+			a {
+				color: #00f;
+				font-weight: bold;
+				background-color: #eef;
+			}
+			a:hover {
+				color: #66f;
+				background-color: #ddf;
+			}
+		</style>
 	</head>
 	<body>
 		<h1>url2link test</h1>
@@ -11,18 +25,27 @@
 		<div id="test-target-1">
 			<p>これはhttps://pickles2.com/へのリンクです。</p>
 			<p>1つのTextノードに複数のURLが含まれている場合: https://pickles2.com/a/b/c.html と https://pickles2.com/foo/ba-ar/?a_a=b&c=d&d%20e=f と https://pickles2.com/#hoge-fugaへのリンクです。</p>
+			<p>http://localhost:8080/a/b/c.html, http://127.0.0.1:9999/foo/ba-ar/?a_a=b&c=d&d%20e=f, https://tuzuru-editor.com/, https://tuzuru-editor.com:443/</p>
+			<p>https://hoge%40foo-bar.com@localhost:8080/a/b/c.html https://hoge:fuga@localhost:8080/a/b/c.html http://:@localhost/ http://localhost http://127.0.0.1</p>
+			<p>誤ったフォーマット: https://hoge%40foo-bar.com@local@host:8080/a/b/c.html https://localhost:80:80/a/b/c.html</p>
 		</div>
 
 		<h2>Query string</h2>
 		<div class="test-target-2">
 			<p>これはhttps://pickles2.com/へのリンクです。</p>
 			<p>1つのTextノードに複数のURLが含まれている場合: https://pickles2.com/a/b/c.html と https://pickles2.com/foo/ba-ar/?a_a=b&c=d&d%20e=f と https://pickles2.com/#hoge-fugaへのリンクです。</p>
+			<p>http://localhost:8080/a/b/c.html, http://127.0.0.1:9999/foo/ba-ar/?a_a=b&c=d&d%20e=f, https://tuzuru-editor.com/, https://tuzuru-editor.com:443/</p>
+			<p>https://hoge%40foo-bar.com@localhost:8080/a/b/c.html https://hoge:fuga@localhost:8080/a/b/c.html http://:@localhost/ http://localhost http://127.0.0.1</p>
+			<p>誤ったフォーマット: https://hoge%40foo-bar.com@local@host:8080/a/b/c.html https://localhost:80:80/a/b/c.html</p>
 		</div>
 
 		<h2>Options</h2>
 		<div class="test-target-3">
 			<p>これはhttps://pickles2.com/へのリンクです。</p>
 			<p>1つのTextノードに複数のURLが含まれている場合: https://pickles2.com/a/b/c.html と https://pickles2.com/foo/ba-ar/?a_a=b&c=d&d%20e=f と https://pickles2.com/#hoge-fugaへのリンクです。</p>
+			<p>http://localhost:8080/a/b/c.html, http://127.0.0.1:9999/foo/ba-ar/?a_a=b&c=d&d%20e=f, https://tuzuru-editor.com/, https://tuzuru-editor.com:443/</p>
+			<p>https://hoge%40foo-bar.com@localhost:8080/a/b/c.html https://hoge:fuga@localhost:8080/a/b/c.html http://:@localhost/ http://localhost http://127.0.0.1</p>
+			<p>誤ったフォーマット: https://hoge%40foo-bar.com@local@host:8080/a/b/c.html https://localhost:80:80/a/b/c.html</p>
 		</div>
 		<script>
 			url2link(document.getElementById('test-target-1'));
